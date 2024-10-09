@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Навигация</h1>
+    <p><a href="./index.html" target="_self">На главную</a></p>        
+    <p><a href="./pasport.html" target="_self">Паспорт 1</a></p>        
+    <p><a href="./pasportV2.html" target="_self">Паспорт 2</a></p>
+    <p><a href="./zadacha.html" target="_self">Задача 1</a></p>        
+    <p><a href="./zadachaInForms.html" target="_self">Задача 2</a></p> <br>  
+
+        <h1 align="center">Паспорт</h1>
+        <h2 align="center"><font color="red" size="6" face="arial">РОССИЙСКАЯ ФЕДЕРАЦИЯ</font></h2>
+        <hr color="blue" width="100%" align="center">
+    
+        <img alt="" src="../img/profile_pic.jpg" width="100px" height="100px">
+
+        <h2>Паспорт выдан: УМВД РОССИИ ПО МОСКОВСКОЙ ОБЛАСТИ</h2>
+        <p>Дата выдачи <span id="data">00.00.0000</span></p> 
+        <p>Код подразделения: 000-000</p>
+    
+        <p>Фамилия <br> <span id="secondName">Ширенкова</span></p>
+        <p>Имя <br> <span id="firstName">София</p></span>
+        <p>Отчество <br> <span id="patronymic">Дмитриевна</p></span>
+<!-- 
+        <p>В этом параграфе встроен <span id="new">оригинальный фрагмент</span> и он будет изменен
+        </p>
+        <p>В текущем параграфе есть<br>разрыв строки</p>
+        
+        <p id="for_click">кликните здесь</p> -->
+
+    
+        <p>Дата рождения <br> <span id="birthDate"> 23.01.2005 </p></span>
+        <p>Сейчас Софии: <span id="howOld">0</span></p>
+        <!-- вывести сколько лет -->
+        <p>Место рождения <br> гор.Горгород</p>
+
+   
+</body>
+
+
+
+<script>
+let dataV = document.getElementsByTagName('span')[0].innerText
+let dataNode = document.getElementById('data')
+console.log("Дата выдачи: ", dataNode.innerText)
+console.log(dataV) 
+let dataVNode = document.getElementsByTagName('span')[0]
+let newData = '22.22.2222'
+console.log(newData)
+
+let secondNameNode = document.getElementById('secondName')
+console.log('Фамилия кириллицей:', secondNameNode.innerText)
+let secondNameLatin = 'Shirenkova';
+console.log('Фамилия латиницей:', secondNameLatin)
+secondNameNode.innerText = secondNameLatin
+
+let firstNameNode = document.getElementById('firstName')
+console.log('Фамилия кириллицей:', firstNameNode.innerText)
+let firstNameLatin = 'Sofiia';
+console.log('Фамилия латиницей:', firstNameLatin)
+firstNameNode.innerText = firstNameLatin
+
+let patronymicNode = document.getElementById('patronymic')
+console.log('Фамилия кириллицей:', patronymicNode.innerText)
+let patronymicLatin = 'Dmitrievna';
+console.log('Фамилия латиницей:', patronymicLatin)
+patronymicNode.innerText = patronymicLatin
+
+let birthDateNode = document.getElementById('birthDate')
+console.log(birthDateNode.innerText)
+
+const myBirthYear = new Date('January 22, 2005');
+console.log(myBirthYear.getFullYear());
+
+// узнали год, в настоящее время
+const yearNow = new Date();
+console.log(yearNow.getFullYear());
+
+let howOldNode = document.getElementById('howOld')
+console.log(howOldNode.innerText = yearNow.getFullYear() - myBirthYear.getFullYear())
+
+// СОЗДАЁМ ФУНКЦИЮ ПО КЛИКУ
+const node_for_click = document.getElementById("for_click")
+
+function find_edit(){
+    const item  = document.getElementById('new')
+    console.log(item.innerText)
+    item.innerHTML="<b>новый фрагмент</b>"
+}
+
+node_for_click.addEventListener("click",find_edit)
+
+
+
+
+// const dateObj = new Date();
+// const month   = dateObj.getUTCMonth() + 1; // months from 1-12
+// const day     = dateObj.getUTCDate();
+// const year    = dateObj.getUTCFullYear();
+
+</script>
+
+
+
+</html>

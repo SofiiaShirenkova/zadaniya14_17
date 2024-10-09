@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 1015</title>
+</head>
+<body>
+    <h1>Навигация</h1>
+    <p><a href="./index.html" target="_self">На главную</a></p>        
+    <p><a href="./pasport.html" target="_self">Паспорт 1</a></p>        
+    <p><a href="./pasportV2.html" target="_self">Паспорт 2</a></p>
+    <p><a href="./zadacha.html" target="_self">Задача 1</a></p>        
+    <p><a href="./zadachaInForms.html" target="_self">Задача 2</a></p> <br>   
+
+    <!--Уникально содержание страницы-->
+    <h3 align="center">Решение алгоритмической задачи №1015</h3>
+    <p id="task_content">Дано вещественное число A. 
+        Вычислить х = a**2+4+5  при а < 62; 
+        в противном случае x = 1/(a**2) + 4a + 5</p>
+    <p>Значение а: <span id="a">10</span></p>
+    <p id="verify">Оценить</p>
+        
+    <p>Результат: <span id="result"></span></p>
+
+
+<script>
+    function verify() {
+        console.log("a")
+        let a = parseInt(elementA.innerText);
+        console.log(a)
+    
+
+        let x 
+        if (a < 62) {
+            x = a**2+4+5
+            result = x
+            document.getElementById("result").innerText =  result;
+        } else {
+            x = 1/(a**2) + 4*a + 5
+            result = x
+            document.getElementById("result").innerText =  result;
+        }
+    }
+    
+    const elementA = document.getElementById("a");
+    
+    const elementVerify = document.getElementById("verify");
+    elementVerify.addEventListener('click', verify);
+</script>
+
+
+</body>
+</html>
